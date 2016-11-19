@@ -1,0 +1,189 @@
+GGB Extracted Code - Scrap Code
+
+~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`*-~`
+
+
+
+Ω-Ω-| Current Line Num |-Ω-Ω   
+
+Ω-Ω-|       223        |-Ω-Ω 
+
+|||||||||||from PostItNote.cs | function: CreatePostItAsset
+
+
+private UnityEngine.Object postItPrefab;
+
+[SerializeField]
+    private RectTransform invContent;
+ public void setInvContentRect() {
+        invContent = GameObject.Find("InvContent").GetComponent<RectTransform>();
+    }
+
+
+
+  /* if (!postItAdded) {
+
+             postItPrefab = Resources.Load("PostIt", typeof(UnityEngine.Object));
+             Vector3 invPosition = new Vector3(0f,0f,0f);
+             myDataModel.setInvPos(invPosition);
+             Quaternion invItemRot = Quaternion.Euler(0f, 0f, 0f);
+             GameObject postItObj = Instantiate(postItPrefab, invPosition, invItemRot) as GameObject;
+             myDataModel.AddToInv(postItObj);
+             RectTransform postRect = postItObj.GetComponent<RectTransform>();
+             postRect.SetParent(GameObject.Find("InvContent").transform);
+             print("Collected Post It Note to Inventory");
+             postItAdded = true;
+             Destroy(gameObject, 0.5f);
+             
+    }*/
+
+
+        //Prepare inventory for load
+        myDataModel.SetInvActive(true);
+        //load prefab
+        Object notePrefab = Resources.Load("PostIt", typeof(Object));
+        //instantiate prefab
+        GameObject NotePrefab = Instantiate(notePrefab) as GameObject;
+        //set parent as "invodds" & set pos to 0,0,0
+        NotePrefab.transform.SetParent(GameObject.Find("InventoryOdds").transform);
+        //Set position to invodds' position
+        NotePrefab.transform.position = GameObject.Find("InventoryOdds").transform.position;
+        //Normalize the magnitude of scale
+        NotePrefab.transform.localScale.Normalize();
+        //Set parent as "invcontent"
+        NotePrefab.transform.SetParent(GameObject.Find("InvContent").transform);
+        //move "invodds" -1 on y
+        GameObject.Find("InventoryOdds").transform.position += Vector3.down * 25f;       
+      
+
+
+
+
+
+
+from DataObj.cs | 
+
+ if (FindObjectOfType<PostItNote>() != null) {
+        FindObjectOfType<PostItNote>().setInvContentRect();
+    }
+
+    if (FindObjectOfType<Tandy>() != null) {
+            FindObjectOfType<Tandy>().setInvContentRect();
+        }
+
+/*public void setInvPos(Vector3 _position) {
+        SetInvActive(true);
+        if ((curInvList.Count+1) % 2 == 0) {
+			print ("invIndexer is an even number!");
+            Vector3 tmpVec = GameObject.Find("InventoryEvens").transform.position;
+            print("temporary vector 3: tmpVec" + tmpVec);
+            _position = tmpVec;
+            //Move InvEvens transform to prep for new inv obj
+            tmpVec.y -= 1f;
+            GameObject.Find("InventoryEvens").transform.position = tmpVec;
+        } else if ((curInvList.Count+1) % 2 == 1) {
+			print ("invIndexer is an odd number!");
+            
+            
+
+
+
+            //Vector3 tmpVec = GameObject.Find("InventoryOdds").transform.position;
+            
+           // print("temporary vector 3: tmpVec" + tmpVec);
+
+            //_position = tmpVec;
+
+            _position = GameObject.Find("InventoryOdds").transform.position;
+            print("_position is: " + _position);
+            //Move InvOdds transform to prep for new inv obj
+
+            //tmpVec.y -= 1f;
+
+            //GameObject.Find("InventoryOdds").transform.position = tmpVec;
+            
+
+        } else {
+            _position = new Vector3(0f, 0f, 0f);
+        }
+	}*/
+
+
+
+	| void UpdateHeadsUp()
+ 
+ 		/*	if (headsUp == null && GameObject.Find("Menu") == null) {
+                print("No HUD Available...");
+
+            } else if (headsUp == null) {
+                headsUp = GameObject.Find("Menu(Clone)").gameObject;
+                headsUp.SetActive(false);
+            } else if (headsUp != null) {
+                print("Object already aquired: " + headsUp.name);
+            }*/
+
+//~~~~~~177   :   GameObject tempUI;   ~~~~~~~~~~~~~~~~~~~~~~~//
+
+ //~~~~~~188   :   headsUp = tempUI;  ~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+  try {
+                headsUp = GameObject.Find("Menu(Clone)").gameObject;
+            } catch(Exception ex) {
+                print(ex.Message);
+                UnityEngine.Object menuPrefab = 
+                    Resources.Load("Menu", typeof (UnityEngine.Object) );
+                headsUp = Instantiate(menuPrefab) as GameObject;
+                headsUp.transform.SetParent(FindObjectOfType<Canvas>().transform);
+                headsUp.transform.localScale += Vector3.right * 2.56f;
+                headsUp.transform.localScale += Vector3.up * 2.56f;
+                headsUp.SetActive(false);
+            } finally {
+                print("Try{tempUI finished.");
+            }
+
+	 | UpdateDevConsoleObj()
+
+ if (devConsole == null && GameObject.Find("DevConsole") == null) {
+            print("No DevComms Available...");
+        } else if (devConsole == null) {
+            devConsole = GameObject.Find("DevConsole").gameObject;
+            SetConsoleActive(false);
+        } else if (devConsole != null) {
+            print("Object already aquired: " + devConsole.name);
+        }
+
+
+        | UpdateMyInventoryObj()
+
+ if (myInventory == null && GameObject.Find("InvConsole") == null) {
+    print("No Inventory Panel Available...");
+} else if (myInventory == null) {
+    myInventory = GameObject.Find("InvConsole").gameObject;
+    SetInvActive(false);
+} else if (myInventory != null) {
+    print("Object already aquired: " + myInventory.name);
+}
+
+
+
+
+from Tandy.cs | 
+
+ if(!tandyAdded) {
+            try {
+                tandyPrefab = Resources.Load("Clickable_Tandy", typeof(UnityEngine.Object));
+                GameObject tandyObj = Instantiate(tandyPrefab) as GameObject;
+                RectTransform tandyRect = tandyObj.GetComponent<RectTransform>();
+                tandyRect.SetParent(GameObject.Find("InvContent").GetComponent<RectTransform>());
+            } catch (ArgumentException ex) {
+                print("!!!Error is: " + ex.Message + "\nTandy not Found, aborting...");
+            } finally {
+                print(invContent.name);
+                print("Collected Tandy to Inventory");
+                tandyAdded = true;
+
+            }
+        }
+
+

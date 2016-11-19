@@ -1,0 +1,29 @@
+GGB Scrap Notes
+
+demo_Clickable_Mailbox - no good, 
+DRE = 4-(1-8)-5
+Create lock mechanism (0-9) | (0-26)
+
+
+	HUD System | _01_Scene_Apartment
+
+	Need to add to DataObj.cs to:...
+
+	if(GO.Find("HUDITEMS") == false)
+
+		Instantiate:... & Don't Destroy on Load
+		Menu
+		DevComms
+		Inventory
+
+
+
+
+
+   		
+      
+
+
+
+
+
