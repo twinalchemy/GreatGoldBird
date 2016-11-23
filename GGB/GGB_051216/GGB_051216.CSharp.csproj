@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\PostItNote.cs" />
     <Compile Include="Assets\Scripts\RecordPlayer.cs" />
     <Compile Include="Assets\Scripts\ScreenFader.cs" />
+    <Compile Include="Assets\Scripts\ScrollPosition.cs" />
     <Compile Include="Assets\Scripts\Speaker.cs" />
     <Compile Include="Assets\Scripts\Stool.cs" />
     <Compile Include="Assets\Scripts\Tandy.cs" />
@@ -109,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Prefabs\Resources\DevCommsData.txt" />
+    <None Include="Assets\Prefabs\Resources\PlayerInventory.txt" />
     <None Include="Assets\Prefabs\Resources\TwineNarrative.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
