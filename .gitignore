@@ -234,3 +234,8 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+GGB Project/Library/
+GGB_12-06-2016/Library/
+GreatGoldBird_12-08-2016/Library/
+GreatGoldBird_12-08-2016/Assembly-CSharp.csproj
+GGB Project/Temp/
