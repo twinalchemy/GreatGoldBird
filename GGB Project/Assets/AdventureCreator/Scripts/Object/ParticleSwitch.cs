@@ -62,7 +62,8 @@ namespace AC
 		{
 			if (GetComponent <ParticleSystem>())
 			{
-				GetComponent <ParticleSystem>().Emit (GetComponent <ParticleSystem>().maxParticles);
+        
+        GetComponent <ParticleSystem>().Emit (GetComponent <ParticleSystem>().main.maxParticles);
 			}
 		}
 		

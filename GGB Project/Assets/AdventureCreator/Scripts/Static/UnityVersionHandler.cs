@@ -314,7 +314,10 @@ namespace AC
 
 			if (GetCurrentSceneName () != sceneName)
 			{
-				#if UNITY_5_3 || UNITY_5_4 || UNITY_5_3_OR_NEWER
+        #if UNITY_5_6_OR_NEWER
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync (sceneName);
+        return true;
+        #elif UNITY_5_3 || UNITY_5_4 || UNITY_5_3_OR_NEWER
 				UnityEngine.SceneManagement.SceneManager.UnloadScene (sceneName);
 				return true;
 				#else
@@ -336,7 +339,10 @@ namespace AC
 
 			if (GetCurrentSceneNumber () != sceneNumber)
 			{
-				#if UNITY_5_3 || UNITY_5_4 || UNITY_5_3_OR_NEWER
+        #if  UNITY_5_6_OR_NEWER
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync (sceneNumber);
+        return true;
+        #elif UNITY_5_3 || UNITY_5_4 || UNITY_5_3_OR_NEWER
 				UnityEngine.SceneManagement.SceneManager.UnloadScene (sceneNumber);
 				return true;
 				#else
