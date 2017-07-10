@@ -247,6 +247,7 @@
      <Compile Include="Assets\AdventureCreator\Scripts\Menu\MenuActionList.cs" />
      <Compile Include="Assets\AdventureCreator\Scripts\Menu\MenuPreview.cs" />
      <Compile Include="Assets\AdventureCreator\Scripts\Menu\MenuSystem.cs" />
+     <Compile Include="Assets\AdventureCreator\Scripts\Menu\OptionalMouseInputModule.cs" />
      <Compile Include="Assets\AdventureCreator\Scripts\Moveable\DragBase.cs" />
      <Compile Include="Assets\AdventureCreator\Scripts\Moveable\DragTrack.cs" />
      <Compile Include="Assets\AdventureCreator\Scripts\Moveable\DragTrack_Curved.cs" />
@@ -349,6 +350,7 @@
      <Compile Include="Assets\AdventureCreator\Scripts\Variables\RuntimeVariables.cs" />
      <Compile Include="Assets\AdventureCreator\Scripts\Variables\VarPreset.cs" />
      <Compile Include="Assets\GreatGoldBird\Game\Scripts\FixOrthoCam.cs" />
+     <Compile Include="Assets\GreatGoldBird\Game\Scripts\Puzzle\LockLetter.cs" />
      <None Include="Assets\AdventureCreator\Graphics\Fonts\SIL Open Font License.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program/Unity.5.6.1f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

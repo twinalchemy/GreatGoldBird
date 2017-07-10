@@ -153,7 +153,7 @@ namespace AC
 			{
 				_parameter.gameObject = gameobjectValue;
 				_parameter.intValue = gameObjectConstantID;
-				Debug.Log (_parameter.gameObject + " " + _parameter.intValue);
+				//Debug.Log (_parameter.gameObject + " " + _parameter.intValue);
 			}
 			else if (_parameter.parameterType == ParameterType.UnityObject)
 			{
